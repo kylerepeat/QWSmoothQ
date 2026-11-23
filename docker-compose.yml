@@ -1,0 +1,15 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "no"]
+
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: qwsmoothq
+      POSTGRES_PASSWORD: qwsmoothq
+      POSTGRES_DB: qwsmoothq
+    ports:
+      - "5432:5432"
